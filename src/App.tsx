@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Search, Mail, RefreshCcw, Settings, Newspaper, Calendar, Tag, TrendingUp, Users, FileText, ExternalLink, Filter, Download, Bell } from 'lucide-react';
 
-const API = import.meta.env.VITE_API_URL || 'https://phys-newsfeed-api.yourdomain.workers.dev';
+// Prefix with underscore to indicate intentionally unused (for future use)
+const _API = import.meta.env.VITE_API_URL || 'https://phys-newsfeed-api.yourdomain.workers.dev';
 
 type Article = {
   id: number;
@@ -22,7 +23,8 @@ type Stats = {
 };
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'articles' | 'subscribers' | 'sources'>('articles');
+  // Removed unused state variables - add back when implementing tabs feature
+  // const [activeTab, setActiveTab] = useState<'articles' | 'subscribers' | 'sources'>('articles');
   const [query, setQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState('');
   const [loading, setLoading] = useState(false);
@@ -61,7 +63,7 @@ export default function App() {
           title: 'Hospital Systems Increase RVU-Based Compensation Models by 15%',
           url: 'https://example.com/rvu-compensation-2025',
           published_at: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
-          summary: 'â€¢ Major health systems are shifting toward RVU-based models\nâ€¢ Average increase of 15% in RVU rates across specialties\nâ€¢ Primary care physicians seeing largest gains\nâ€¢ Expected to impact 2025-2026 contract negotiations',
+          summary: '• Major health systems are shifting toward RVU-based models\n• Average increase of 15% in RVU rates across specialties\n• Primary care physicians seeing largest gains\n• Expected to impact 2025-2026 contract negotiations',
           tags: 'RVU, Compensation, Market Trends',
           source_id: 1,
           paywalled: 0
@@ -71,7 +73,7 @@ export default function App() {
           title: 'FTC Issues New Guidelines on Non-Compete Clauses for Physicians',
           url: 'https://example.com/ftc-noncompete-update',
           published_at: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
-          summary: 'â€¢ FTC proposes ban on non-compete agreements nationwide\nâ€¢ Significant implications for physician contracts\nâ€¢ Healthcare industry seeks exemptions\nâ€¢ Implementation timeline uncertain pending legal challenges',
+          summary: '• FTC proposes ban on non-compete agreements nationwide\n• Significant implications for physician contracts\n• Healthcare industry seeks exemptions\n• Implementation timeline uncertain pending legal challenges',
           tags: 'Non-Compete, Legal, Contract',
           source_id: 2,
           paywalled: 0
@@ -81,7 +83,7 @@ export default function App() {
           title: 'Average Signing Bonuses Reach Record Highs in Competitive Markets',
           url: 'https://example.com/signing-bonus-trends',
           published_at: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(),
-          summary: 'â€¢ Signing bonuses up 22% year-over-year\nâ€¢ Orthopedic surgeons commanding $100K+ bonuses\nâ€¢ Rural areas offering additional incentives\nâ€¢ Student loan repayment becoming standard benefit',
+          summary: '• Signing bonuses up 22% year-over-year\n• Orthopedic surgeons commanding $100K+ bonuses\n• Rural areas offering additional incentives\n• Student loan repayment becoming standard benefit',
           tags: 'Signing Bonus, Compensation, Market Trends',
           source_id: 1,
           paywalled: 0
@@ -91,7 +93,7 @@ export default function App() {
           title: 'Call Pay Structures Evolve: Hybrid Models Gain Traction',
           url: 'https://example.com/call-pay-evolution',
           published_at: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
-          summary: 'â€¢ Hospitals experimenting with tiered call pay systems\nâ€¢ Base rate plus per-encounter fees becoming popular\nâ€¢ Emergency medicine leading innovation\nâ€¢ Work-life balance considerations driving changes',
+          summary: '• Hospitals experimenting with tiered call pay systems\n• Base rate plus per-encounter fees becoming popular\n• Emergency medicine leading innovation\n• Work-life balance considerations driving changes',
           tags: 'Call Pay, Compensation, Contract',
           source_id: 3,
           paywalled: 0
@@ -101,7 +103,7 @@ export default function App() {
           title: 'Benefits Packages Expand Beyond Traditional Health Insurance',
           url: 'https://example.com/physician-benefits-2025',
           published_at: new Date(Date.now() - 12 * 24 * 60 * 60 * 1000).toISOString(),
-          summary: 'â€¢ Mental health support and wellness programs standard\nâ€¢ Childcare assistance emerging as key benefit\nâ€¢ Flexible scheduling options in demand\nâ€¢ Financial planning services increasingly common',
+          summary: '• Mental health support and wellness programs standard\n• Childcare assistance emerging as key benefit\n• Flexible scheduling options in demand\n• Financial planning services increasingly common',
           tags: 'Benefits, Compensation, Market Trends',
           source_id: 2,
           paywalled: 0
