@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Search, Mail, RefreshCcw, Settings, Newspaper, Calendar, Tag, TrendingUp, Users, FileText, ExternalLink, Filter, Download, Bell } from 'lucide-react';
 
 // Prefix with underscore to indicate intentionally unused (for future use)
-const _API = import.meta.env.VITE_API_URL || 'https://phys-newsfeed-api.yourdomain.workers.dev';
 
 type Article = {
   id: number;
